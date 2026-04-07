@@ -24,10 +24,10 @@
 
           <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="#gallery"
+              href="#how-it-works"
               className="pressable-crisp select-none rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-[0_14px_34px_rgba(5,150,105,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 active:scale-95"
             >
-              Смотреть демо
+              Обзор проекта
             </a>
             <a
               href="https://vk.com/neuralagronom"
