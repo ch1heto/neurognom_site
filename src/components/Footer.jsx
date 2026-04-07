@@ -1,4 +1,4 @@
-function Footer({ content }) {
+﻿function Footer({ content }) {
   return (
     <footer
       id="contacts"
@@ -14,23 +14,19 @@ function Footer({ content }) {
 
         <div className="flex flex-col items-center gap-8 md:flex-row">
           <div className="flex gap-8">
-            {content.links.map(({ href, label }) => (
+            {content.links.map(({ href, label, external }) => (
               <a
                 key={label}
                 href={href}
+                {...(external
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 className="text-slate-500 transition-colors hover:text-emerald-500 dark:text-slate-400"
               >
                 {label}
               </a>
             ))}
           </div>
-
-          <a
-            href="#contacts"
-            className="rounded-full bg-primary px-6 py-3 font-bold text-white transition-opacity hover:opacity-85"
-          >
-            {content.ctaLabel}
-          </a>
         </div>
       </div>
     </footer>

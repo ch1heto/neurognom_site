@@ -28,13 +28,15 @@ function Hero() {
           <div className="flex flex-wrap gap-4 pt-4">
             <a
               href="#gallery"
-              className="rounded-xl bg-primary-container px-8 py-4 text-lg font-bold text-on-primary-container transition-transform hover:scale-[0.98]"
+              className="will-change-transform [backface-visibility:hidden] [transform:translateZ(0)] rounded-xl bg-primary-container px-8 py-4 text-lg font-bold text-on-primary-container transition-transform hover:scale-[0.98] active:scale-[0.98]"
             >
               Смотреть демо
             </a>
             <a
-              href="#contacts"
-              className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-8 py-4 text-lg font-bold text-on-surface transition-transform hover:scale-[0.98] dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+              href="https://vk.com/neuralagronom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="will-change-transform [backface-visibility:hidden] [transform:translateZ(0)] flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-8 py-4 text-lg font-bold text-on-surface transition-transform hover:scale-[0.98] active:scale-[0.98] dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
             >
               Вступить в группу ВКонтакте
             </a>

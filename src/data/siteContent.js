@@ -1,7 +1,8 @@
 ﻿export const navLinks = [
   { href: '#about', label: 'О проекте', accent: true },
-  { href: '#technology', label: 'Технологии' },
+  { href: '#how-it-works', label: 'Как это работает' },
   { href: '#economy', label: 'Преимущества' },
+  { href: '#economics-project', label: 'Экономика проекта' },
   { href: '#contacts', label: 'Контакты' },
 ];
 
@@ -60,8 +61,7 @@ export const footerContent = {
   brand: 'Нейроагроном',
   tagline: 'Интеллект в каждом ростке',
   links: [
-    { href: '#', label: 'ВКонтакте' },
+    { href: 'https://vk.com/neuralagronom', label: 'ВКонтакте', external: true },
     { href: '#contacts', label: 'Связаться с нами' },
   ],
-  ctaLabel: 'Запросить КП',
 };
