@@ -1,0 +1,48 @@
+const heroImage =
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuDfwJcZ-1jiH-byrIpJJA7PFWnfaSlE-Zyh3z4HkXGb3h9xUduaU67HrYX8v1b8EYMaMkPz9RfQcHNkYyL7hu5vbMW_c_Bm1sVxyuXHKV4qTPZxzhbD4480jfLvJQMgdlxZrpvZUkLXChk7grxWjbjz0SGgFAxBBxZ228HSLXNKSnvCIwHV4T7_8dQPSGEHpp-DYHpTSX8VTds7p6J6Dx4KbAfzme5DA0b6dE1SHEUlocBO8Ci-xzXSUimK0EpyGAszqmtTjigEvzo';
+
+function Hero() {
+  return (
+    <section id="hero" className="relative flex min-h-[860px] items-center overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Современная гидропонная ферма с листовой зеленью под управляемым освещением"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-hero-fade dark:bg-hero-fade-dark" />
+      </div>
+
+      <div className="relative z-10 mx-auto grid max-w-7xl px-6 py-24 md:grid-cols-2">
+        <div className="space-y-8">
+          <h1 className="font-headline text-5xl font-extrabold leading-tight tracking-tighter text-on-background dark:text-white md:text-6xl">
+            Нейроагроном — интеллектуальная система управления{' '}
+            <span className="text-primary-container dark:text-emerald-400">гидропонными</span>{' '}
+            установками
+          </h1>
+
+          <p className="max-w-lg text-xl font-medium text-slate-700 dark:text-slate-100 md:text-2xl">
+            Для малого и среднего агробизнеса. Автоматизация, которая окупается.
+          </p>
+
+          <div className="flex flex-wrap gap-4 pt-4">
+            <a
+              href="#gallery"
+              className="rounded-xl bg-primary-container px-8 py-4 text-lg font-bold text-on-primary-container shadow-lg shadow-emerald-500/20 transition-transform hover:scale-[0.98]"
+            >
+              Смотреть демо
+            </a>
+            <a
+              href="#contacts"
+              className="flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/75 px-8 py-4 text-lg font-bold text-on-surface shadow-glass backdrop-blur-md transition-transform hover:scale-[0.98] dark:border-white/10 dark:bg-slate-900/60 dark:text-slate-100"
+            >
+              Вступить в группу VK
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;

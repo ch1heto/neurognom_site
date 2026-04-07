@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Нейроагроном — Интеллектуальное управление гидропоникой</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#005236",
+                      "primary-fixed-dim": "#4edea3",
+                      "background": "#faf8ff",
+                      "surface": "#faf8ff",
+                      "on-tertiary-container": "#711419",
+                      "secondary-fixed-dim": "#9ed2b5",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#3c4a42",
+                      "surface-container-low": "#f2f3ff",
+                      "tertiary-container": "#fc7c78",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#faf8ff",
+                      "surface-container": "#eaedff",
+                      "surface-container-high": "#e2e7ff",
+                      "surface-container-highest": "#dae2fd",
+                      "outline": "#6c7a71",
+                      "on-tertiary-fixed": "#410005",
+                      "on-secondary-fixed": "#002113",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#dae2fd",
+                      "primary": "#006c49",
+                      "on-secondary-container": "#3c6c54",
+                      "secondary-container": "#b7ebce",
+                      "tertiary-fixed-dim": "#ffb3af",
+                      "on-primary-fixed": "#002113",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#1e4f3a",
+                      "outline-variant": "#bbcabf",
+                      "inverse-surface": "#283044",
+                      "on-surface": "#131b2e",
+                      "tertiary": "#a43a3a",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#eef0ff",
+                      "inverse-primary": "#4edea3",
+                      "on-primary-container": "#00422b",
+                      "primary-fixed": "#6ffbbe",
+                      "secondary": "#376850",
+                      "on-tertiary-fixed-variant": "#842225",
+                      "primary-container": "#10b981",
+                      "on-background": "#131b2e",
+                      "tertiary-fixed": "#ffdad7",
+                      "surface-tint": "#006c49",
+                      "secondary-fixed": "#baeed1",
+                      "error-container": "#ffdad6",
+                      "surface-dim": "#d2d9f4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased transition-colors duration-300">
+<!-- TopNavBar -->
+<header class="bg-surface/70 dark:bg-inverse-surface/70 backdrop-blur-xl shadow-sm dark:shadow-none font-manrope antialiased tracking-tight docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-emerald-700 dark:text-emerald-500">Нейроагроном</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-emerald-700 dark:text-emerald-400 font-semibold border-b-2 border-emerald-500 pb-1 transition-all duration-300" href="#">О проекте</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors" href="#">Технологии</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors" href="#">Экономика</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors" href="#">Контакты</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-all hover:opacity-80" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400">light_mode</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hydroponic setup" class="w-full h-full object-cover" data-alt="Modern hydroponic indoor farm with vibrant green plants growing in white trays under controlled purple and white LED lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfwJcZ-1jiH-byrIpJJA7PFWnfaSlE-Zyh3z4HkXGb3h9xUduaU67HrYX8v1b8EYMaMkPz9RfQcHNkYyL7hu5vbMW_c_Bm1sVxyuXHKV4qTPZxzhbD4480jfLvJQMgdlxZrpvZUkLXChk7grxWjbjz0SGgFAxBBxZ228HSLXNKSnvCIwHV4T7_8dQPSGEHpp-DYHpTSX8VTds7p6J6Dx4KbAfzme5DA0b6dE1SHEUlocBO8Ci-xzXSUimK0EpyGAszqmtTjigEvzo"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent dark:from-on-background dark:via-on-background/85"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2">
+<div class="space-y-8">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tighter leading-tight text-on-background">
+                        Нейроагроном — интеллектуальная система управления <span class="text-primary-container">гидропонными</span> установками
+                    </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-medium max-w-lg">
+                        Для малого и среднего агробизнеса. Автоматизация, которая окупается.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold text-lg hover:scale-95 transition-transform shadow-lg shadow-emerald-500/20">
+                            Смотреть демо
+                        </button>
+<button class="bg-surface-container-highest dark:bg-inverse-surface text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:scale-95 transition-transform flex items-center gap-2">
+                            Вступить в группу VK
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- HardwareComplex Section -->
+<section class="py-24 bg-surface px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-start">
+<!-- Left Column -->
+<div class="space-y-12">
+<div>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-background mb-6">Программно-аппаратный комплекс</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                                Мы разработали B2B решение полного цикла: от точных датчиков промышленного класса до облачной платформы аналитики. Наша система берет на себя рутину, позволяя вам масштабировать бизнес.
+                            </p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+<div class="flex flex-col items-center p-6 bg-surface-container-low rounded-2xl transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-primary text-3xl mb-3">device_thermostat</span>
+<span class="font-semibold text-sm">Температура</span>
+</div>
+<div class="flex flex-col items-center p-6 bg-surface-container-low rounded-2xl transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-primary text-3xl mb-3">humidity_mid</span>
+<span class="font-semibold text-sm">Влажность</span>
+</div>
+<div class="flex flex-col items-center p-6 bg-surface-container-low rounded-2xl transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-primary text-3xl mb-3">light_mode</span>
+<span class="font-semibold text-sm">Освещение</span>
+</div>
+<div class="flex flex-col items-center p-6 bg-surface-container-low rounded-2xl transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-primary text-3xl mb-3">water_ph</span>
+<span class="font-semibold text-sm">pH раствора</span>
+</div>
+<div class="flex flex-col items-center p-6 bg-surface-container-low rounded-2xl transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-primary text-3xl mb-3">electric_bolt</span>
+<span class="font-semibold text-sm">EC (Электр.)</span>
+</div>
+<div class="flex flex-col items-center p-6 bg-surface-container-low rounded-2xl transition-all hover:translate-y-[-4px]">
+<span class="material-symbols-outlined text-primary text-3xl mb-3">waves</span>
+<span class="font-semibold text-sm">Уровень</span>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="grid gap-6">
+<div class="bg-surface-container-lowest dark:bg-inverse-surface/30 dark:backdrop-blur-xl p-8 rounded-3xl shadow-xl dark:shadow-none border-t border-white/20">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">ИИ-прогнозирование</h3>
+<p class="text-on-surface-variant">Система анализирует данные в реальном времени и предупреждает о возможных отклонениях за 48 часов до их критического влияния на растения.</p>
+</div>
+<div class="bg-surface-container-lowest dark:bg-inverse-surface/30 dark:backdrop-blur-xl p-8 rounded-3xl shadow-xl dark:shadow-none border-t border-white/20">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Локальная архитектура</h3>
+<p class="text-on-surface-variant">Контроллеры работают автономно. Даже при потере интернета ваша ферма остается в безопасности, продолжая цикл выращивания по заданным алгоритмам.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ImageSlider Section -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 mb-12">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-background">Галерея проекта</h2>
+</div>
+<div class="flex gap-6 px-6 overflow-x-auto no-scrollbar pb-8">
+<div class="min-w-[400px] h-[500px] rounded-[2.5rem] overflow-hidden flex-shrink-0 shadow-2xl">
+<img alt="Project 1" class="w-full h-full object-cover" data-alt="Close up of lush green lettuce leaves growing in a high-tech vertical aeroponic system with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpJB0zuq_vkfog4KP5c3POiHYr_X_1G8ib0rEu6hKK5T5YDjFwzUKQ1n9okPj2awuWcmmqivSV8dFaJUrwxOufo1KlVo7B8JNPJ-1q0tSnd_Iis_jORQ11iAzMj26ygOWbUlnhXAIBti_mRx-NA6b87GovtOV5nbck9eilwN7QbK5RMH0aRHS4AkKqo9M1CtOCU5ieF6KRxVHz85GuYg7kyRsrV4ggxx2RC0M7nNwkUVx10CNwpq2N1N8QX21bKPMqEdmEn8dr8tE"/>
+</div>
+<div class="min-w-[600px] h-[500px] rounded-[2.5rem] overflow-hidden flex-shrink-0 shadow-2xl">
+<img alt="Project 2" class="w-full h-full object-cover" data-alt="Wide shot of a professional indoor microgreens farm with multiple levels of shelving and pink growth lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApfKBlaQ9KM3aZPL8WmxvK8AiRMzM6ppCFWkJRZSgZ1xOadUChd-Y3F2ooRxyBKnZXKJTDjYzze4RJyAX5Jr9GeECG37mnKlr0yZP05oYlG2HQg465-4p0gajvzUlo7aHtlIoIuWUzfPu83D1oyb1xrmwd2_SNZwR9DDot1pVmRKpsUiXKUM5N6kRzVrPh0EIbNgb36LSC_ATaTfviPibBQEukn9ZtFeXhIDc4YK3DCSrMxOTZaZ34_zKQdjhxXYoc4EAaF-CA-AQ"/>
+</div>
+<div class="min-w-[400px] h-[500px] rounded-[2.5rem] overflow-hidden flex-shrink-0 shadow-2xl">
+<img alt="Project 3" class="w-full h-full object-cover" data-alt="Detailed view of nutrient solution flowing through a hydroponic tube system with sensors attached to the pipes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF-4zyfE2Zh6DOVtqB5MTAncp_joHeeKlDuNKBlo4Lde-cYI6mYgF2cPci49jF-MUVrp_gvd15OC5IjLFx7bafSOGUoxSwW9hQE2llVoq4SiASvySXE-OQ73ABBm4VH-pWEe9a2yVRR_RBNZa2TDPftghNN1KiLXxzn7pe2NFw0WIfjDvKmvI28ttd4NjDd5nxIwQ_JzPmHerNMGjT5aOLbSizg3Hr_lmKMhUAXN6Q-nTjiivK9-RhZAptI3X5ewG614BNY3GQAoE"/>
+</div>
+<div class="min-w-[500px] h-[500px] rounded-[2.5rem] overflow-hidden flex-shrink-0 shadow-2xl">
+<img alt="Project 4" class="w-full h-full object-cover" data-alt="Person in lab coat checking plant health using a digital tablet connected to the farm management system" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF9OYtOuuIFzLowu-qW9WzQ8rE3fGw3uJQ2G52_bzv6Hq_oOd0ZaURTLSbdxsFUM-CXuS306VQC3vpCGa5moQRlqy4xN94NW57CAj5F-t0fRkWWn2TFkzuMif9YSK1bkm2iw7OBg5Qm9cqxY2RmIS4C8k4RgEOvDyuHXRUoJRpZvxlOLqaaj64WtH3rQpq6YgRTDgPviqwsj7MTEZnOKgTU9ErbyidED6g1E5dGSc79kfhJyUqPU6_okdN7uR74VuMT-ZMl28Aheo"/>
+</div>
+</div>
+</section>
+<!-- BentoFeatures Section -->
+<section class="py-24 bg-surface px-6">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-background mb-16 text-center">Преимущества платформы</h2>
+<div class="bento-grid">
+<!-- Large Card -->
+<div class="col-span-1 md:col-span-2 row-span-1 md:row-span-2 bg-primary text-white p-10 rounded-[2rem] flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-primary-container rounded-full blur-[80px] opacity-40 group-hover:opacity-60 transition-opacity"></div>
+<div class="relative z-10">
+<span class="text-7xl font-extrabold tracking-tighter mb-4 block">15%</span>
+<h3 class="text-3xl font-bold mb-4 leading-tight">Снижение затрат</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium">Эффективность удобрений</span>
+<span class="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-medium">Экономия ресурсов</span>
+</div>
+</div>
+<p class="relative z-10 text-emerald-100/80 mt-8">Оптимизация каждого миллилитра раствора и каждого ватта электроэнергии за счет точных алгоритмов ИИ.</p>
+</div>
+<!-- Small Card 1 -->
+<div class="col-span-1 md:col-span-1 bg-surface-container-high dark:bg-inverse-surface p-8 rounded-[2rem] flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-primary-container mb-4" style="font-variation-settings: 'FILL' 1;">person_off</span>
+<h3 class="text-xl font-bold">Минимум человеческого фактора</h3>
+</div>
+<!-- Small Card 2 -->
+<div class="col-span-1 md:col-span-1 bg-surface-container-high dark:bg-inverse-surface p-8 rounded-[2rem] flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-primary-container mb-4" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<h3 class="text-xl font-bold">24/7 Мониторинг</h3>
+</div>
+<!-- Wide Card -->
+<div class="col-span-1 md:col-span-2 bg-emerald-50 dark:bg-emerald-950/20 p-8 rounded-[2rem] border-2 border-emerald-100 dark:border-emerald-900/30 flex items-center justify-between">
+<div>
+<h3 class="text-2xl font-bold mb-2">B2B Масштабируемость</h3>
+<p class="text-on-surface-variant">От одной установки до целого тепличного комплекса под единым управлением.</p>
+</div>
+<span class="material-symbols-outlined text-emerald-600 text-6xl hidden sm:block">rebase_edit</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-slate-900 full-width rounded-t-[2rem] font-manrope text-sm transition-all duration-300">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-xl font-bold text-emerald-700 dark:text-emerald-500 mb-2">Нейроагроном</div>
+<p class="text-slate-500 dark:text-slate-400">Интеллект в каждом ростке</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="flex gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-emerald-500 transition-colors hover:translate-x-1 transition-transform" href="#">ВКонтакте</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-emerald-500 transition-colors hover:translate-x-1 transition-transform" href="#">Связаться с нами</a>
+</div>
+<button class="bg-primary text-white px-6 py-3 rounded-full font-bold hover:opacity-80 transition-all">
+                    Запросить КП
+                </button>
+</div>
+</div>
+</footer>
+</body></html>
