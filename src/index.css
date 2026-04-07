@@ -13,8 +13,8 @@
     min-width: 320px;
     overflow-x: hidden;
     background:
-      radial-gradient(circle at top left, rgba(16, 185, 129, 0.08), transparent 24%),
-      linear-gradient(180deg, #f8fafc 0%, #eef5f0 100%);
+      radial-gradient(circle at top left, rgba(16, 185, 129, 0.06), transparent 24%),
+      linear-gradient(180deg, #f8fafc 0%, #eef3f0 100%);
     transition: background-color 300ms ease, color 300ms ease;
   }
 
@@ -29,7 +29,7 @@
 
   html.dark body {
     background:
-      radial-gradient(circle at top left, rgba(16, 185, 129, 0.08), transparent 20%),
+      radial-gradient(circle at top left, rgba(16, 185, 129, 0.06), transparent 20%),
       linear-gradient(180deg, #020617 0%, #0f172a 52%, #111827 100%);
   }
 
@@ -43,34 +43,8 @@
     @apply will-change-transform [backface-visibility:hidden] [transform:translateZ(0)];
   }
 
-  .surface-card {
-    @apply rounded-[2rem] border border-slate-200 bg-white shadow-[0_18px_48px_rgba(15,23,42,0.08)] transition-all duration-300 dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_18px_48px_rgba(2,6,23,0.26)];
-  }
-
-  .surface-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(16, 185, 129, 0.22);
-    box-shadow: 0 22px 54px rgba(15, 23, 42, 0.1);
-  }
-
-  html.dark .surface-card:hover {
-    border-color: rgba(16, 185, 129, 0.34);
-    box-shadow: 0 22px 54px rgba(2, 6, 23, 0.32);
-  }
-
-  .surface-card-dark {
-    @apply rounded-[2rem] border border-slate-800 bg-slate-900 text-white shadow-[0_18px_48px_rgba(2,6,23,0.24)] transition-all duration-300 dark:border-slate-700 dark:bg-slate-900 dark:shadow-[0_18px_48px_rgba(2,6,23,0.32)];
-  }
-
-  .surface-card-dark:hover {
-    transform: translateY(-4px);
-    border-color: rgba(16, 185, 129, 0.3);
-    box-shadow: 0 22px 54px rgba(2, 6, 23, 0.3);
-  }
-
-  .surface-card:active,
-  .surface-card-dark:active {
-    transform: scale(0.985);
+  .saas-card {
+    @apply cursor-default rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_14px_36px_rgba(15,23,42,0.08)] transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_14px_36px_rgba(2,6,23,0.24)];
   }
 
   .accent-chip {

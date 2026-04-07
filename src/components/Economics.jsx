@@ -3,7 +3,6 @@
     title: 'Стоимость оборудования',
     value: '130,000 ₽',
     description: 'Комплект датчиков и контроллеров на 1 установку',
-    highlight: true,
   },
   {
     title: 'ПО / Поддержка',
@@ -34,35 +33,15 @@ function Economics() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {economicsCards.map(({ title, value, description, highlight }) => (
-            <article
-              key={title}
-              className={[
-                'pressable-crisp border-t-2 p-8 active:scale-[0.985]',
-                highlight
-                  ? 'surface-card-dark border-t-emerald-500'
-                  : 'surface-card border-t-emerald-500',
-              ].join(' ')}
-            >
-              <p
-                className={[
-                  'mb-6 text-sm font-semibold uppercase tracking-[0.18em]',
-                  highlight ? 'text-emerald-200/85' : 'text-emerald-700 dark:text-emerald-300',
-                ].join(' ')}
-              >
+          {economicsCards.map(({ title, value, description }) => (
+            <article key={title} className="saas-card border-t-2 border-t-emerald-500">
+              <p className="mb-6 text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-300">
                 {title}
               </p>
-              <p
-                className={[
-                  'mb-4 font-headline text-4xl font-bold tracking-tight',
-                  highlight ? 'text-white' : 'text-slate-900 dark:text-white',
-                ].join(' ')}
-              >
+              <p className="mb-4 font-headline text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
                 {value}
               </p>
-              <p className={highlight ? 'text-slate-300' : 'text-slate-600 dark:text-slate-300'}>
-                {description}
-              </p>
+              <p className="text-slate-600 dark:text-slate-300">{description}</p>
             </article>
           ))}
         </div>

@@ -22,7 +22,7 @@ function VideoBlock() {
   return (
     <section id="how-it-works" className="px-6 py-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
-        <div className="relative aspect-video overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 shadow-[0_30px_70px_rgba(2,6,23,0.3)]">
+        <div className="relative aspect-video overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 shadow-[0_24px_56px_rgba(2,6,23,0.28)]">
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_35%,rgba(255,255,255,0)_100%)]" />
           <div className="absolute inset-0 flex items-center justify-center">
             <button
@@ -35,7 +35,7 @@ function VideoBlock() {
           </div>
         </div>
 
-        <div className="surface-card border-t-2 border-t-emerald-500 p-8 sm:p-10">
+        <div className="saas-card border-t-2 border-t-emerald-500 sm:p-10">
           <h2 className="mb-8 font-headline text-4xl font-bold tracking-tight text-on-background dark:text-slate-50">
             Коротко о проекте
           </h2>

@@ -18,10 +18,7 @@ function HardwareComplex({ cards, sensors }) {
 
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
               {sensors.map(({ icon, label }) => (
-                <article
-                  key={label}
-                  className="surface-card pressable-crisp border-t-2 border-t-emerald-500 p-6 text-center active:scale-[0.985]"
-                >
+                <article key={label} className="saas-card border-t-2 border-t-emerald-500 p-6 text-center">
                   <div className="flex flex-col items-center">
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-300">
                       <AppIcon name={icon} className="h-6 w-6" />
@@ -35,15 +32,12 @@ function HardwareComplex({ cards, sensors }) {
 
           <div className="grid gap-6 md:grid-cols-2">
             {cards.map(({ icon, title, description }) => (
-              <article
-                key={title}
-                className="surface-card-dark pressable-crisp border-t-2 border-t-emerald-500 p-8 active:scale-[0.985]"
-              >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-800 text-emerald-400 dark:bg-slate-800">
+              <article key={title} className="saas-card border-t-2 border-t-emerald-500">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-300">
                   <AppIcon name={icon} className="h-7 w-7" />
                 </div>
-                <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
-                <p className="text-slate-300">{description}</p>
+                <h3 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">{title}</h3>
+                <p className="text-slate-600 dark:text-slate-300">{description}</p>
               </article>
             ))}
           </div>

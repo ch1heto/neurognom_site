@@ -2,7 +2,7 @@
 
 function Header({ links, theme, onToggleTheme }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950/88">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/98 shadow-sm transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950/98">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-6 py-4">
         <a
           href="#hero"
@@ -11,13 +11,13 @@ function Header({ links, theme, onToggleTheme }) {
           Нейроагроном
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden flex-row items-center gap-8 md:flex">
           {links.map(({ href, label, accent }) => (
             <a
               key={label}
               href={href}
               className={[
-                'font-headline text-sm font-medium tracking-[0.01em] text-slate-600 transition-colors duration-200 hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400',
+                'bg-transparent p-0 font-headline text-sm font-bold text-slate-600 transition-colors duration-200 hover:text-emerald-500 dark:text-slate-200 dark:hover:text-emerald-400',
                 accent ? 'text-emerald-600 dark:text-emerald-400' : '',
               ].join(' ')}
             >
