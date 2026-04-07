@@ -1,4 +1,8 @@
 ﻿function Footer({ content }) {
+  const visibleLinks = content.links.filter(
+    ({ label }) => label !== 'Связаться с нами' && label !== 'Contact Us',
+  );
+
   return (
     <footer
       id="contacts"
@@ -13,7 +17,7 @@
         </div>
 
         <div className="mt-8 flex items-center gap-8 md:mt-0 md:justify-end">
-          {content.links.map(({ href, label, external }) => (
+          {visibleLinks.map(({ href, label, external }) => (
             <a
               key={label}
               href={href}
