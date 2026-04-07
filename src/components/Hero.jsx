@@ -1,5 +1,20 @@
 ﻿const heroImage =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuDfwJcZ-1jiH-byrIpJJA7PFWnfaSlE-Zyh3z4HkXGb3h9xUduaU67HrYX8v1b8EYMaMkPz9RfQcHNkYyL7hu5vbMW_c_Bm1sVxyuXHKV4qTPZxzhbD4480jfLvJQMgdlxZrpvZUkLXChk7grxWjbjz0SGgFAxBBxZ228HSLXNKSnvCIwHV4T7_8dQPSGEHpp-DYHpTSX8VTds7p6J6Dx4KbAfzme5DA0b6dE1SHEUlocBO8Ci-xzXSUimK0EpyGAszqmtTjigEvzo';
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuApfKBlaQ9KM3aZPL8WmxvK8AiRMzM6ppCFWkJRZSgZ1xOadUChd-Y3F2ooRxyBKnZXKJTDjYzze4RJyAX5Jr9GeECG37mnKlr0yZP05oYlG2HQg465-4p0gajvzUlo7aHtlIoIuWUzfPu83D1oyb1xrmwd2_SNZwR9DDot1pVmRKpsUiXKUM5N6kRzVrPh0EIbNgb36LSC_ATaTfviPibBQEukn9ZtFeXhIDc4YK3DCSrMxOTZaZ34_zKQdjhxXYoc4EAaF-CA-AQ';
+
+const heroMetrics = [
+  {
+    value: '48 часов',
+    label: 'раннего предупреждения о рисках для урожая',
+  },
+  {
+    value: '24/7',
+    label: 'контроль параметров установки и состояния раствора',
+  },
+  {
+    value: '15%',
+    label: 'потенциал снижения затрат на ресурсы и обслуживание',
+  },
+];
 
 function Hero() {
   return (
@@ -7,40 +22,50 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Современная гидропонная ферма с листовой зеленью под управляемым освещением"
-          className="h-full w-full object-cover"
+          alt="Современная гидропонная установка в чистой промышленной теплице"
+          className="h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-hero-fade dark:bg-hero-fade-dark" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/96 via-white/88 to-white/18 dark:from-slate-950/92 dark:via-slate-950/76 dark:to-slate-950/18" />
       </div>
 
-      <div className="relative z-10 mx-auto grid max-w-7xl px-6 py-24 md:grid-cols-2">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-end">
         <div className="space-y-8">
-          <h1 className="font-headline text-5xl font-extrabold leading-tight tracking-tighter text-on-background dark:text-white md:text-6xl">
-            Нейроагроном — интеллектуальная система управления{' '}
-            <span className="text-primary-container dark:text-emerald-400">гидропонными</span>{' '}
-            установками
+          <div className="accent-chip">Платформа для промышленной гидропоники</div>
+
+          <h1 className="max-w-3xl font-headline text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white md:text-6xl">
+            Нейроагроном помогает управлять гидропонными установками спокойно, точно и без лишних потерь.
           </h1>
 
-          <p className="max-w-lg text-xl font-medium text-slate-700 dark:text-slate-200 md:text-2xl">
-            Для малого и среднего агробизнеса. Автоматизация, которая окупается.
+          <p className="max-w-2xl text-xl font-medium leading-relaxed text-slate-600 dark:text-slate-200 md:text-2xl">
+            Профессиональная система мониторинга и аналитики для малого и среднего агробизнеса с понятным интерфейсом и надежной автоматизацией.
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="#gallery"
-              className="will-change-transform [backface-visibility:hidden] [transform:translateZ(0)] rounded-xl bg-primary-container px-8 py-4 text-lg font-bold text-on-primary-container transition-transform hover:scale-[0.98] active:scale-[0.98]"
+              className="pressable-crisp select-none rounded-xl bg-emerald-600 px-8 py-4 text-lg font-semibold text-white shadow-[0_14px_34px_rgba(5,150,105,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-emerald-700 active:scale-95"
             >
               Смотреть демо
             </a>
             <a
-              href="https://vk.com/neuralagronom"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="will-change-transform [backface-visibility:hidden] [transform:translateZ(0)] flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-8 py-4 text-lg font-bold text-on-surface transition-transform hover:scale-[0.98] active:scale-[0.98] dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+              href="#contacts"
+              className="pressable-crisp flex select-none items-center gap-2 rounded-xl border border-slate-300 bg-white/96 px-8 py-4 text-lg font-semibold text-slate-700 shadow-[0_14px_30px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-700 active:scale-95 dark:border-slate-700 dark:bg-slate-900/92 dark:text-slate-200 dark:hover:border-emerald-700 dark:hover:text-emerald-400"
             >
-              Вступить в группу ВКонтакте
+              Связаться с нами
             </a>
           </div>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          {heroMetrics.map(({ value, label }) => (
+            <article
+              key={value}
+              className="surface-card pressable-crisp border-t-2 border-t-emerald-500 p-5 active:scale-[0.985]"
+            >
+              <div className="text-2xl font-headline font-bold text-slate-900 dark:text-white">{value}</div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{label}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

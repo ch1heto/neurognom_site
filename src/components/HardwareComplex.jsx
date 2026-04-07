@@ -1,50 +1,49 @@
-﻿function HardwareComplex({ cards, sensors }) {
+﻿import AppIcon from './AppIcon';
+
+function HardwareComplex({ cards, sensors }) {
   return (
-    <section id="technology" className="overflow-hidden px-6 py-24">
+    <section id="technology" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="grid items-start gap-16 lg:grid-cols-2">
+        <div className="grid items-start gap-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
           <div id="about" className="space-y-12">
             <div>
+              <div className="accent-chip mb-4">Аппаратная надежность</div>
               <h2 className="mb-6 font-headline text-4xl font-bold tracking-tight text-on-background dark:text-slate-50">
                 Программно-аппаратный комплекс
               </h2>
               <p className="text-lg leading-relaxed text-on-surface-variant dark:text-slate-300">
-                Мы разработали решение полного цикла для бизнеса: от точных датчиков
-                промышленного класса до облачной платформы аналитики. Наша система берет на
-                себя рутину, позволяя вам масштабировать бизнес.
+                Мы разработали решение полного цикла для бизнеса: от точных датчиков промышленного класса до облачной платформы аналитики. Система автоматизирует рутину и помогает масштабировать проект без потери контроля.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
               {sensors.map(({ icon, label }) => (
-                <div
+                <article
                   key={label}
-                  className="flex flex-col items-center rounded-[1.75rem] border border-white/40 bg-surface-container-low p-6 text-center transition-transform hover:-translate-y-1 dark:border-white/10 dark:bg-white/5"
+                  className="surface-card pressable-crisp border-t-2 border-t-emerald-500 p-6 text-center active:scale-[0.985]"
                 >
-                  <span className="material-symbols-outlined mb-3 text-3xl text-primary dark:text-emerald-400">
-                    {icon}
-                  </span>
-                  <span className="text-sm font-semibold text-on-background dark:text-slate-100">
-                    {label}
-                  </span>
-                </div>
+                  <div className="flex flex-col items-center">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-300">
+                      <AppIcon name={icon} className="h-6 w-6" />
+                    </div>
+                    <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">{label}</span>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
 
-          <div className="grid gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {cards.map(({ icon, title, description }) => (
               <article
                 key={title}
-                className="rounded-[2rem] border border-white/40 bg-surface-container-lowest p-8 shadow-glass transition-colors dark:border-white/10 dark:bg-white/5 dark:backdrop-blur-xl dark:shadow-none"
+                className="surface-card-dark pressable-crisp border-t-2 border-t-emerald-500 p-8 active:scale-[0.985]"
               >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-container">
-                  <span className="material-symbols-filled text-white">{icon}</span>
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-800 text-emerald-400 dark:bg-slate-800">
+                  <AppIcon name={icon} className="h-7 w-7" />
                 </div>
-                <h3 className="mb-4 text-2xl font-bold text-on-background dark:text-slate-50">
-                  {title}
-                </h3>
-                <p className="text-on-surface-variant dark:text-slate-300">{description}</p>
+                <h3 className="mb-4 text-2xl font-bold text-white">{title}</h3>
+                <p className="text-slate-300">{description}</p>
               </article>
             ))}
           </div>

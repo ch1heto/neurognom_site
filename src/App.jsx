@@ -1,5 +1,4 @@
 ﻿import Header from './components/Header';
-import ClickEffect from './components/ClickEffect';
 import Hero from './components/Hero';
 import HardwareComplex from './components/HardwareComplex';
 import VideoBlock from './components/VideoBlock';
@@ -21,7 +20,6 @@ function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background font-body text-on-background antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
-      <ClickEffect />
       <Header links={navLinks} theme={theme} onToggleTheme={toggleTheme} />
       <main className="overflow-x-hidden">
         <Hero />
