@@ -1,4 +1,4 @@
-import Header from './components/Header';
+﻿import Header from './components/Header';
 import Hero from './components/Hero';
 import HardwareComplex from './components/HardwareComplex';
 import ImageSlider from './components/ImageSlider';
@@ -17,9 +17,9 @@ function App() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="min-h-screen bg-background font-body text-on-background antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+    <div className="min-h-screen overflow-x-hidden bg-background font-body text-on-background antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
       <Header links={navLinks} theme={theme} onToggleTheme={toggleTheme} />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <HardwareComplex cards={hardwareCards} sensors={sensorItems} />
         <ImageSlider items={galleryItems} />

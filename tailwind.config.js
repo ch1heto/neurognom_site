@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,jsx}'],
@@ -60,7 +60,7 @@ export default {
         full: '9999px',
       },
       fontFamily: {
-        headline: ['Manrope', 'sans-serif'],
+        headline: ['Space Grotesk', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
         label: ['Inter', 'sans-serif'],
       },
@@ -77,3 +77,4 @@ export default {
   },
   plugins: [],
 };
+

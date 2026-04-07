@@ -1,7 +1,7 @@
-export const navLinks = [
+﻿export const navLinks = [
   { href: '#about', label: 'О проекте', accent: true },
   { href: '#technology', label: 'Технологии' },
-  { href: '#economy', label: 'Экономика' },
+  { href: '#economy', label: 'Преимущества' },
   { href: '#contacts', label: 'Контакты' },
 ];
 
@@ -9,8 +9,8 @@ export const sensorItems = [
   { icon: 'device_thermostat', label: 'Температура' },
   { icon: 'humidity_mid', label: 'Влажность' },
   { icon: 'light_mode', label: 'Освещение' },
-  { icon: 'water_ph', label: 'pH раствора' },
-  { icon: 'electric_bolt', label: 'EC (Электр.)' },
+  { icon: 'water_ph', label: 'Кислотность раствора' },
+  { icon: 'electric_bolt', label: 'Электропроводность' },
   { icon: 'waves', label: 'Уровень' },
 ];
 

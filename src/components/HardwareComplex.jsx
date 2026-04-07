@@ -1,4 +1,4 @@
-function HardwareComplex({ cards, sensors }) {
+﻿function HardwareComplex({ cards, sensors }) {
   return (
     <section id="technology" className="overflow-hidden px-6 py-24">
       <div className="mx-auto max-w-7xl">
@@ -9,9 +9,9 @@ function HardwareComplex({ cards, sensors }) {
                 Программно-аппаратный комплекс
               </h2>
               <p className="text-lg leading-relaxed text-on-surface-variant dark:text-slate-300">
-                Мы разработали B2B решение полного цикла: от точных датчиков промышленного
-                класса до облачной платформы аналитики. Наша система берет на себя рутину,
-                позволяя вам масштабировать бизнес.
+                Мы разработали решение полного цикла для бизнеса: от точных датчиков
+                промышленного класса до облачной платформы аналитики. Наша система берет на
+                себя рутину, позволяя вам масштабировать бизнес.
               </p>
             </div>
 

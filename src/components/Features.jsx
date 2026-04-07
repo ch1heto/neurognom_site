@@ -1,4 +1,4 @@
-function Features() {
+﻿function Features() {
   return (
     <section id="economy" className="px-6 py-24">
       <div className="mx-auto max-w-7xl">
@@ -13,10 +13,10 @@ function Features() {
               <span className="mb-4 block text-7xl font-extrabold tracking-tighter">15%</span>
               <h3 className="mb-4 text-3xl font-bold leading-tight">Снижение затрат</h3>
               <div className="flex flex-wrap gap-2">
-                <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-md">
+                <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium">
                   Эффективность удобрений
                 </span>
-                <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-md">
+                <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-medium">
                   Экономия ресурсов
                 </span>
               </div>
@@ -48,7 +48,7 @@ function Features() {
           <article className="col-span-1 flex items-center justify-between gap-6 rounded-[2rem] border-2 border-emerald-100 bg-emerald-50 p-8 transition-colors dark:border-emerald-900/30 dark:bg-emerald-950/20 md:col-span-2">
             <div>
               <h3 className="mb-2 text-2xl font-bold text-on-background dark:text-slate-50">
-                B2B Масштабируемость
+                Масштабируемость для бизнеса
               </h3>
               <p className="text-on-surface-variant dark:text-slate-300">
                 От одной установки до целого тепличного комплекса под единым управлением.

@@ -1,4 +1,4 @@
-function ThemeToggle({ theme, onToggle }) {
+﻿function ThemeToggle({ theme, onToggle }) {
   const isDark = theme === 'dark';
   const icon = isDark ? 'light_mode' : 'dark_mode';
   const label = isDark ? 'Переключить на светлую тему' : 'Переключить на темную тему';
@@ -9,7 +9,7 @@ function ThemeToggle({ theme, onToggle }) {
       aria-label={label}
       title={label}
       onClick={onToggle}
-      className="rounded-full p-2 text-emerald-700 transition-colors hover:bg-black/5 dark:text-emerald-300 dark:hover:bg-white/10"
+      className="p-2 rounded-full text-slate-500 hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
     >
       <span className="material-symbols-outlined block text-[22px]">{icon}</span>
     </button>
@@ -17,3 +17,4 @@ function ThemeToggle({ theme, onToggle }) {
 }
 
 export default ThemeToggle;
+
