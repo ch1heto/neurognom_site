@@ -23,7 +23,7 @@
 
 function Economics() {
   return (
-    <section id="economics-project" className="px-6 py-24">
+    <section id="economics-project" className="scroll-mt-24 px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <div className="accent-chip mb-4">Финансовая модель</div>

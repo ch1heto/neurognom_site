@@ -1,7 +1,16 @@
 ﻿function Header({ links }) {
-  const visibleLinks = links.filter(
-    ({ label }) => label !== 'Связаться с нами' && label !== 'Contact Us',
-  );
+  const visibleLinks = links
+    .filter(
+      ({ label, href }) =>
+        label !== 'Связаться с нами' &&
+        label !== 'Contact Us' &&
+        href !== '#how-it-works',
+    )
+    .map((link) =>
+      link.href === '#about'
+        ? { ...link, href: '#how-it-works', label: 'Коротко о проекте' }
+        : link,
+    );
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/98 shadow-sm transition-colors duration-300">

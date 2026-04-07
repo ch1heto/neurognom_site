@@ -2,10 +2,10 @@
 
 function HardwareComplex({ cards, sensors }) {
   return (
-    <section id="technology" className="px-6 py-24">
+    <section id="technology" className="scroll-mt-24 px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <div className="grid items-start gap-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
-          <div id="about" className="space-y-12">
+          <div id="about" className="scroll-mt-24 space-y-12">
             <div>
               <div className="accent-chip mb-4">Аппаратная надежность</div>
               <h2 className="mb-6 font-headline text-4xl font-bold tracking-tight text-on-background dark:text-slate-50">

@@ -2,7 +2,7 @@
 
 function Features() {
   return (
-    <section id="economy" className="px-6 py-24">
+    <section id="economy" className="scroll-mt-24 px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <div className="accent-chip mb-4">Преимущества платформы</div>

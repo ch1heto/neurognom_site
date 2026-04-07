@@ -20,7 +20,7 @@ const projectItems = [
 
 function VideoBlock() {
   return (
-    <section id="how-it-works" className="px-6 py-24">
+    <section id="how-it-works" className="scroll-mt-24 px-6 py-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
         <div className="relative aspect-video overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-950 shadow-[0_24px_56px_rgba(2,6,23,0.28)]">
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0)_35%,rgba(255,255,255,0)_100%)]" />

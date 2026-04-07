@@ -2,7 +2,7 @@
   return (
     <section
       id="gallery"
-      className="overflow-hidden bg-slate-50/85 py-24 transition-colors duration-300 dark:bg-slate-950/60"
+      className="scroll-mt-24 overflow-hidden bg-slate-50/85 py-24 transition-colors duration-300 dark:bg-slate-950/60"
     >
       <div className="mx-auto mb-12 max-w-7xl px-6">
         <div className="accent-chip mb-4">Визуальные материалы</div>
